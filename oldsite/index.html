@@ -1,0 +1,234 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="keywords" content="iceland, viking age, volsung, egil, tolkien, Richard Wagner, Wagner, Ring cycle, ring of the nibelungs, nibelungs, nibelungenlied, rhinegold, odin, wotan, ragnarok, valhalla, Beowulf, valkyrie, valkyries, gotterdammerung, J.R.R. Tolkien, Mosfell, Viking">
+         <META NAME="description" CONTENT="UCLA's Professor Jesse Byock explores the Viking World with extracts from his various books as well as information from his archaeological digs in Iceland.">
+		<title>Jesse Byock's Viking Site</title>
+		<csactions>
+			<csaction name="B57D09E03" class="ShowHide" type="ONEVENT" val0="about" val1="1">
+			<csaction name="B57D0A214" class="ShowHide" type="ONEVENT" val0="about" val1="0">
+			<csaction name="B57D0D9F5" class="ShowHide" type="ONEVENT" val0="other" val1="1">
+			<csaction name="B57D0DAE6" class="ShowHide" type="ONEVENT" val0="other" val1="0">
+			<csaction name="B5938AD70" class="ShowHide" type="ONEVENT" val0="kraki" val1="1">
+			<csaction name="B5938AE71" class="ShowHide" type="ONEVENT" val0="kraki" val1="0">
+			<csaction name="B5938AF82" class="ShowHide" type="ONEVENT" val0="volsungs" val1="1">
+			<csaction name="B5938AFF3" class="ShowHide" type="ONEVENT" val0="volsungs" val1="0">
+			<csaction name="B598F1210" class="ShowHide" type="ONEVENT" val0="about" val1="0">
+			<csaction name="B598F13B1" class="ShowHide" type="ONEVENT" val0="kraki" val1="0">
+			<csaction name="B598F14D2" class="ShowHide" type="ONEVENT" val0="volsungs" val1="0">
+			<csaction name="B598F1603" class="ShowHide" type="ONEVENT" val0="other" val1="0">
+			<csaction name="B598F1974" class="Goto Link" type="ONEVENT" val0="http://www.viking.ucla.edu/others/" val1>
+			<csaction name="B598F1CE5" class="Goto Link" type="ONEVENT" val0="http://www.viking.ucla.edu/volsungs/index.html" val1>
+			<csaction name="B598F1FA6" class="Goto Link" type="ONEVENT" val0="http://www.viking.ucla.edu/hrolf/maincontents.html" val1>
+			<csaction name="B598F2277" class="Goto Link" type="ONEVENT" val0="http://www.viking.ucla.edu/author/biblio.html" val1>
+		</csactions>
+		<csscriptdict>
+			<script><!--
+function CSClickReturn () {
+	var bAgent = window.navigator.userAgent; 
+	var bAppName = window.navigator.appName;
+	if ((bAppName.indexOf("Explorer") >= 0) && (bAgent.indexOf("Mozilla/3") >= 0) && (bAgent.indexOf("Mac") >= 0))
+		return true; // dont follow link
+	else return false; // dont follow link
+}
+CSStopExecution = false;
+
+function CSAction(array) { 
+	return CSAction2(CSAct, array);
+}
+function CSAction2(fct, array) { 
+	var result;
+	for (var i=0;i<array.length;i++) {
+		if(CSStopExecution) return false; 
+		var actArray = fct[array[i]];
+		if(actArray == null) return false; 
+
+		var tempArray = new Array;
+		for(var j=1;j<actArray.length;j++) {
+			if((actArray[j] != null) && (typeof(actArray[j]) == "object") && (actArray[j].length == 2)) {
+				if(actArray[j][0] == "VAR") {
+					tempArray[j] = CSStateArray[actArray[j][1]];
+				}
+				else {
+					if(actArray[j][0] == "ACT") {
+						tempArray[j] = CSAction(new Array(new String(actArray[j][1])));
+					}
+				else
+					tempArray[j] = actArray[j];
+				}
+			}
+			else
+				tempArray[j] = actArray[j];
+		}			
+		result = actArray[0](tempArray);
+	}
+	return result;
+}
+CSAct = new Object;
+CSAg = window.navigator.userAgent; CSBVers = parseInt(CSAg.charAt(CSAg.indexOf("/")+1),10);
+function IsIE() { return CSAg.indexOf("MSIE") > 0;}
+function CSIEStyl(s) { return document.all.tags("div")[s].style; }
+function CSNSStyl(s) { return CSFindElement(s,0); }
+function CSFindElement(n,ly) { if (CSBVers < 4) return document[n];
+	var curDoc = ly ? ly.document : document; var elem = curDoc[n];
+	if (!elem) { for (var i=0;i<curDoc.layers.length;i++) {
+		elem = CSFindElement(n,curDoc.layers[i]); if (elem) return elem; }}
+	return elem;
+}
+function CSSetStyleVis(s,v) { if (IsIE()) CSIEStyl(s).visibility = (v == 0) ? "hidden" : "visible";
+	else CSNSStyl(s).visibility = (v == 0) ? 'hide' : 'show'; }
+function CSGetStyleVis(s) { if (IsIE()) return (CSIEStyl(s).visibility == "hidden") ? 0 : 1;
+	else return (CSNSStyl(s).visibility == 'hide') ? 0 : 1;}
+function CSShowHide(action) {
+	if (action[1] == '') return;
+	var type=action[2];
+	if(type==0) CSSetStyleVis(action[1],0);
+	else if(type==1) CSSetStyleVis(action[1],1);
+	else if(type==2) { 
+		if (CSGetStyleVis(action[1]) == 0) CSSetStyleVis(action[1],1);
+		else CSSetStyleVis(action[1],0);
+	}
+}function CSGotoLink(action) {
+	if (action[2].length) {
+		var hasFrame=false;
+		for(i=0;i<parent.frames.length;i++) { if (parent.frames[i].name==action[2]) { hasFrame=true; break;}}
+		if (hasFrame==true)
+			parent.frames[action[2]].location = action[1];
+		else
+			window.open (action[1],action[2],"");
+	}
+	else location = action[1];
+}
+// --></script>
+		</csscriptdict>
+		<csactiondict>
+			
+<script>
+<!--
+<!--
+CSAct[/*CMP*/ 'B57D09E03'] = new Array(CSShowHide,/*CMP*/ 'about',1);
+CSAct[/*CMP*/ 'B57D0A214'] = new Array(CSShowHide,/*CMP*/ 'about',0);
+CSAct[/*CMP*/ 'B57D0D9F5'] = new Array(CSShowHide,/*CMP*/ 'other',1);
+CSAct[/*CMP*/ 'B57D0DAE6'] = new Array(CSShowHide,/*CMP*/ 'other',0);
+CSAct[/*CMP*/ 'B5938AD70'] = new Array(CSShowHide,/*CMP*/ 'kraki',1);
+CSAct[/*CMP*/ 'B5938AE71'] = new Array(CSShowHide,/*CMP*/ 'kraki',0);
+CSAct[/*CMP*/ 'B5938AF82'] = new Array(CSShowHide,/*CMP*/ 'volsungs',1);
+CSAct[/*CMP*/ 'B5938AFF3'] = new Array(CSShowHide,/*CMP*/ 'volsungs',0);
+CSAct[/*CMP*/ 'B598F1210'] = new Array(CSShowHide,/*CMP*/ 'about',0);
+CSAct[/*CMP*/ 'B598F13B1'] = new Array(CSShowHide,/*CMP*/ 'kraki',0);
+CSAct[/*CMP*/ 'B598F14D2'] = new Array(CSShowHide,/*CMP*/ 'volsungs',0);
+CSAct[/*CMP*/ 'B598F1603'] = new Array(CSShowHide,/*CMP*/ 'other',0);
+CSAct[/*CMP*/ 'B598F1974'] = new Array(CSGotoLink,/*URL*/ 'http://www.viking.ucla.edu/others/','');
+CSAct[/*CMP*/ 'B598F1CE5'] = new Array(CSGotoLink,/*URL*/ 'http://www.viking.ucla.edu/volsungs/index.html','');
+CSAct[/*CMP*/ 'B598F1FA6'] = new Array(CSGotoLink,/*URL*/ 'http://www.viking.ucla.edu/hrolf/maincontents.html','');
+CSAct[/*CMP*/ 'B598F2277'] = new Array(CSGotoLink,/*URL*/ 'http://www.viking.ucla.edu/author/biblio.html','');
+
+// -->
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_showHideLayers() { //v6.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+//-->
+</script>
+		</csactiondict>
+		<style type="text/css"><!--
+			#about { position: absolute; top: 135px; left: 110px; width: 200px; height: 120px; visibility: hidden }
+			#kraki { position: absolute; top: 135px; left: 110px; width: 200px; height: 120px; visibility: hidden }
+			#other { position: absolute; top: 135px; left: 110px; width: 200px; height: 120px; visibility: hidden }
+			#volsungs { position: absolute; top: 135px; left: 110px; width: 200px; height: 120px; visibility: hidden }
+			.popup { color: #930; font-weight: bold; font-size: 12pt; font-family: Verdana }
+			a:link { color: brown; }
+			a:visited {color: brown; }
+			-->
+		</style>
+	</head>
+
+	<body bgcolor="white" background="media/goldparchment.jpg">
+		
+    <table width="200" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="media/viking.jpg" width="599" height="600" usemap="#Map" border="0">
+          <map name="Map">
+            <area shape="rect" coords="355,273,519,321" href="media/VHM_Byock-L2.pdf" target="_blank" alt="Viking Heritage article from March 2001">
+            <area shape="rect" coords="160,400,445,450" href="http://www.viking.ucla.edu/volsungs/index.html" alt="Excerpts from the the Penguin Book publication" onClick="CSAction(new Array(/*CMP*/'B598F14D2',/*CMP*/'B598F1CE5'));return CSClickReturn();" onMouseOver="CSAction(new Array(/*CMP*/'B5938AF82'));return true;" onMouseOut="CSAction(new Array(/*CMP*/'B5938AFF3'));" csover="B5938AF82" csout="B5938AFF3" csclick="B598F14D2,B598F1CE5">
+            <area shape="rect" coords="476,535,565,567" href="http://www.viking.ucla.edu/others/" csover="B57D0D9F5" csout="B57D0DAE6" onMouseOver="CSAction(new Array(/*CMP*/'B57D0D9F5'));return true;" onMouseOut="CSAction(new Array(/*CMP*/'B57D0DAE6'));" onClick="CSAction(new Array(/*CMP*/'B598F1603',/*CMP*/'B598F1974'));return CSClickReturn();" csclick="B598F1603,B598F1974">
+            <area shape="rect" coords="356,234,500,269" href="Scientific_American/Egils_Bones.htm" target="_blank" alt="Scientific American article from January 1995" onMouseOver="MM_showHideLayers('Egil','','show')" onMouseOut="MM_showHideLayers('Egil','','hide')">
+            <area shape="rect" coords="160,331,461,381" href="http://www.viking.ucla.edu/hrolf/maincontents.html" alt="Excerpts from the the Penguin Book publication" onClick="CSAction(new Array(/*CMP*/'B598F13B1',/*CMP*/'B598F1FA6'));return CSClickReturn();" onMouseOver="CSAction(new Array(/*CMP*/'B5938AD70'));return true;" onMouseOut="CSAction(new Array(/*CMP*/'B5938AE71'));" csover="B5938AD70" csout="B5938AE71" csclick="B598F13B1,B598F1FA6">
+            <area shape="rect" coords="163,469,377,499" href="http://www.viking.ucla.edu/media/feud.swf" target="_blank" onMouseOver="MM_showHideLayers('sagafeud','','show')" onMouseOut="MM_showHideLayers('sagafeud','','hide')">
+            <area shape="rect" coords="161,515,341,589" href="http://www.anth.ucsb.edu/faculty/walker/Iceland/mosfell.html" target="_blank" onMouseOver="MM_showHideLayers('Mosfell','','show')" onMouseOut="MM_showHideLayers('Mosfell','','hide')">
+            <area shape="rect" coords="355,182,519,227" href="VIVA_VOX_web/Viva_vox.html" target="_blank" alt="Viva Vox article from 2000" onMouseOver="MM_showHideLayers('vivavox','','show')" onMouseOut="MM_showHideLayers('vivavox','','hide')">
+            <area shape="rect" coords="354,140,561,175" href="http://www.viking.ucla.edu/author/biblio.html" alt="Jesse Byock Bibliography" onClick="CSAction(new Array(/*CMP*/'B598F1210',/*CMP*/'B598F2277'));return CSClickReturn();" onMouseOver="CSAction(new Array(/*CMP*/'B57D09E03'));return true;" onMouseOut="CSAction(new Array(/*CMP*/'B57D0A214'));" csover="B57D09E03" csout="B57D0A214" csclick="B598F1210,B598F2277">
+        </map></td>
+        <td valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="150px">&nbsp;</td>
+          </tr>
+          <tr>
+            <td><p><a href="http://www.ioa.ucla.edu/people/faculty/faculty?lid=2396" target="_blank">Cotsen Institute of Archaeology at UCLA</a></p>
+              <p><a href="http://www.gagarin.is/_verk/moso/main_content.html" target="_blank">http://www.gagarin.is/_verk/moso/main_content.html<br>
+            </a>(Click on the word &Aacute;FRAM at the bottom of the opening page)							
+              <p>
+              	<!--			  <p><a href="http://www.anth.ucsb.edu/faculty/walker/Iceland/hrisbrunews.htm" target="_blank">Viking Longhouse, Icelandic evening news</a>
+<p />-->
+             					<a href="http://www.cmrs.ucla.edu/projects/mosfell_dig.html" target="_blank">UCLA Center for Medieval & Renaissance Studies - Video of Mosfell Archaeological Project</a>
+							<p>Mosfell Archaeological Video on YouTube </span><br />
+			<a href="http://www.youtube.com/watch?v=Y6RaCkPEzno" target="_blank">Part 1</a> |
+			<a href="http://www.youtube.com/watch?v=oKl5hPrxUkc" target="_blank">2</a> |
+			<a href="http://www.youtube.com/watch?v=Ulu4uJP-7J8" target="_blank">3</a> |
+			<a href="http://www.youtube.com/watch?v=neriHWDdpAM" target="_blank">4</a> |
+			<a href="http://www.youtube.com/watch?v=U0hgX7ffvQY" target="_blank">5</a> |
+			<a href="http://www.youtube.com/watch?v=oc3pjGqjdEk" target="_blank">6</a></p>			
+							<p><a href="Islande_des_Vikings_Revue_Byock.pdf" target="_blank"><em>Islande des Vikings</em>: Revue de Presse </a>(PDF)</td>
+          </tr>
+        </table>          <P class=MsoNormal>&nbsp;</P>        </td>
+      </tr>
+    </table>
+    <div id="sagafeud" style="position:absolute; left:110px; top:133px; width:200px; height:120; visibility: hidden"><font face="Verdana,Arial,Helvetica" color="#990000"><span class="popup"><b>A 
+  Flash file that will Illustrate, the Saga Feud.</b></span></font></div>
+<div id="vivavox" style="position:absolute; left:110px; top:133; width:200; height:120; visibility: hidden"> 
+  <p><font face="Verdana,Arial,Helvetica" color="#990000"><span class="popup"><b>A 
+    brief interview with Jesse Byock by the Viva Vox.</b></span></font></p>
+</div>
+<div id="Mosfell" style="position:absolute; left:110px; top:133; width:200; height:120px; visibility: hidden"><font face="Verdana,Arial,Helvetica" color="#990000"><span class="popup"><b>The 
+  Mosfell Archaelogical Project is an interdisciplinary reasearch project employing 
+  the tools of archaeology, history, and anthropology as well as forensics and 
+  environmental sciences.</b></span></font></div>
+<div id="VolsungsCoverUC" style="position:absolute; left:400px; top:575px; width:75px; height:116px; visibility: visible"> 
+  <p align="center"><font face="Verdana,Arial,Helvetica" color="#990000"><span class="popup"><b>NEW</b></span></font><a href="http://www.viking.ucla.edu/others/"><img src="others/media/saga_volsungs_uc_front_th.jpg" width="72" height="114" border="0"></a></p>
+  </div>
+<div id="Layer1" style="position:absolute; left:500px; top:575px; width:85px; height:98px; z-index:1; visibility: visible"> 
+  <p align="center"><font face="Verdana,Arial,Helvetica" color="#990000"><span class="popup"><b>NEW</b></span></font><b><font face="Verdana, Arial, Helvetica, sans-serif" color="#663300"><a href="http://www.viking.ucla.edu/others/"><img src="others/media/v_age_iceland_front_th.jpg" width="85" height="114" border="0"></a></font></b></p>
+  </div>
+<div id="Egil" style="position:absolute; left:106px; top:131px; width:200px; height:119px; visibility: hidden"><font face="Verdana,Arial,Helvetica" color="#990000"><span class="popup"></span></font><font color="#CCCCCC" face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#993300">A</font><font color="#993300">n 
+  Icelandic saga tells of a Viking who had unusual, menacing features, including 
+  a skull that could resist blows from an ax. He probably suffered from an ailment 
+  called Paget's disease</font></b></font></div>
+<div align="left">
+			
+  <div valign="top">    <p>
+				
+    <div id="volsungs" style=""> <font face="Verdana,Arial,Helvetica" color="#990000"><span class="popup"><b>Excerpts 
+      from <i>The Saga of the Volsungs,</i> including maps and introductory material.</b></span></font></div>
+				
+    <div id="about" style=""> <font face="Verdana,Arial,Helvetica" color="#990000"><span class="popup"><b>A 
+      selected bibliography of Professor Byock's works.</b></span></font></div>
+    <div id="kraki" style=""> <font face="Verdana,Arial,Helvetica" color="#990000"><b>Excerpts 
+    	from <i>The Saga of King Hrolf Kraki,</i> including maps, diagrams, and introductory material.</b></font></div>
+    <div id="other" style="width: 200px; height: 120px; visibility: hidden"> <font face="Verdana,Arial,Helvetica" color="#990000"><span class="popup"><b>A look at some other published works by Professor Byock, including translations.</b></span></font></div>
+  </div>
+	</div>
+	</body>
+
+</html>
